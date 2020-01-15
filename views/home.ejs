@@ -1,1 +1,18 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 <h1>Home Page</h1>
+
+<div class="alert alert-success" role="alert">
+    <%= newPlayer %>
+</div>
+
+<form action="/newPlayer" method="POST">
+    <input type="text" name="username" placeholder="Name" pattern=".{3,20}" title="Username must be between 3 to 20 characters" required>
+    <button>Join</button>
+</form>
+
+<form action="/clear" method="POST">
+    <button>Clear Table</button>
+</form>

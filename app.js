@@ -2,19 +2,19 @@ const app = require('express')(),
     bodyParser = require('body-parser'),
     mysql = require('mysql'),
     session = require('express-session'),
-    cookieParser = require('cookie-parser'),
+    // cookieParser = require('cookie-parser'),
     flash = require('req-flash'),
     config = require('./config.js'),
     connection = mysql.createConnection(config);;
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(session({ secret: '123', resave: false, saveUninitialized: false }));
 app.use(flash());
 
 app.get("/", (req, res) => {
-    res.render("home");
+    res.render("home", { duplicate: ''});
 });
 
 app.post("/newPlayer", (req, res) => {
@@ -31,19 +31,18 @@ app.post("/newPlayer", (req, res) => {
     //
     
     var name = req.body.username;
-    console.log('root: inserting >' + name);
+    console.log('root insert: ' + name);
     
     //Duplicate name checker
     connection.query(`SELECT Names FROM Players`, (err, results, fields) => {
         var stringResult = JSON.stringify(results);
-        if (stringResult.match(/name/gi)) {
-            req.flash('success', 'You are successfully using req-flash');
-            res.render('home', {newPlayer: req.flash('success')});
-            return console.log("Duplicate");
-            //
-            // SEND USER VISIBLE ERROR MESSAGE
-            //
-            
+        console.log('stringResult: ' + stringResult);
+        // console.log('StringResults: ' + stringResult, 'name gi: ' + name, 'match: ' + stringResult.match(/name/gi), 'RegExp: ' + new RegExp(name, 'i').test(stringResult));
+        var testDuplicate = new RegExp(name, 'i').test(stringResult);
+        if (testDuplicate) {
+            req.flash('duplicate', 'Username taken! Try another username.');
+            res.render('home', { duplicate: req.flash('duplicate')});
+            return console.log('Duplicate');
         }
         //Name insertion
         console.log("Unique!");
@@ -52,10 +51,8 @@ app.post("/newPlayer", (req, res) => {
                 VALUES(?, 0)`;
 
         connection.query(sql, name);
-        res.render('home');
-        //
+        res.render('home', { duplicate: '' });
     });
-    
 });
 
 app.post("/clear", (req, res) => {

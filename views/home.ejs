@@ -1,20 +1,67 @@
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<h1>Home Page</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mafia MLLG</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+        <h1>MMBH</h1>
 
-<% if(duplicate && duplicate.length > 0) { %>
-<div class="alert alert-danger" role="alert">
-    <%= duplicate %>
-</div>
-<% } %>
+        <% if(duplicate && duplicate.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= duplicate %>
+        </div>
+        <% } %>
 
-<form action="/newPlayer" method="POST">
-    <input type="text" name="username" placeholder="Name" pattern=".{3,20}" title="Username must be between 3 to 20 characters" required>
-    <button>Join</button>
-</form>
+        <form action="/" method="POST">
+            <div class="input-group mb-3" id="usernameBox">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">Username</span>
+                </div>
+                <input type="text" class="form-control " placeholder="Username" aria-label="Username" aria-describedby="basic-addon2" pattern=".{3,20}"
+                title="Username must be between 3 to 20 characters" required>
+            </div>
+            <input class="btn btn-primary" type="submit" id="jBtn" value="Join">
+        </form>
 
-<form action="/clear" method="POST">
-    <button>Clear Table</button>
-</form>
+        <% if(data && data.length > 1) { %>}
+        <div id="playerList">
+            <h2>Players </h2>
+            <form action="/#" method="POST">
+                <button class="btn btn-success btn-sm" id="refresh">Refresh</button>
+            </form>
+            
+            <div id="usernameShowBox">
+                <table>
+                    <%  data.forEach(element => { %>
+                        <%  var string = JSON.stringify(element).replace('{', '').replace(/"/g, '').replace('Names', '').replace(':', '').replace('}', ''); %>
+                        <tr>
+                            <th>• <%= string %></th> 
+                        </tr>
+                    <% }); %>
+                </table>                
+            </div>
+            <% } %>
+        </div>
+
+        <div>
+            <input type="number" class="form-control " placeholder="Amount of players""
+                    pattern=".{1,2}" title="Must be between 1 to 2 characters" required>
+        </div>
+        
+
+        <!-- <form action="/clear" method="POST">
+            <button>Clear Table</button>
+        </form> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

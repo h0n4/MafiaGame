@@ -9,6 +9,9 @@ h1 {
 button {
     float: left;
 }
+.jumbotron {
+    background-color: rgb(138, 138, 138);
+}
 #hostBtn {
     float: right;
 }

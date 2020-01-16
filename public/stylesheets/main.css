@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(48, 40, 40);
+    text-align: center;
+    margin-top: 10%;
+}   
+h1 {
+    margin-bottom: 5rem;
+}
+button {
+    float: left;
+}
+#hostBtn {
+    float: right;
+}

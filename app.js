@@ -2,14 +2,12 @@ const app = require('express')(),
     bodyParser = require('body-parser'),
     mysql = require('mysql'),
     session = require('express-session'),
-    // cookieParser = require('cookie-parser'),
     flash = require('req-flash'),
     config = require('./config.js'),
     connection = mysql.createConnection(config);;
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cookieParser());
 app.use(session({ secret: '123', resave: false, saveUninitialized: false }));
 app.use(flash());
 

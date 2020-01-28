@@ -3,15 +3,13 @@ body {
     text-align: center;
     margin-top: 10%;
 }   
-h1 {
-    margin-bottom: 5rem;
-}
-button {
-    float: left;
-}
 .jumbotron {
     background-color: rgb(138, 138, 138);
 }
+
 #hostBtn {
     float: right;
+}
+#playerBtn {
+    float: left;
 }

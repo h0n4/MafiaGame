@@ -1,0 +1,51 @@
+            body {
+                background-color: rgb(48, 40, 40);
+                text-align: center;
+            }   
+            form {
+                animation: inputAnimation 5s linear;
+            }
+            @keyframes inputAnimation { 
+                0% { 
+                    opacity: 0; 
+                    animation-timing-function: ease-in;
+                }
+                60% {
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                80% {
+                    opacity: 1;
+                }
+            }
+            h1 {
+                color: white;
+                animation: titleAnimation 5s linear;
+            }
+            @keyframes titleAnimation {
+                0% { 
+                    opacity: 0; 
+                    animation-timing-function: ease-in;
+                }
+                10% {
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                30% {
+                    opacity: 1
+                }
+            }
+            .input-group {
+                margin: 0 auto;
+            }
+            #usernameBox {
+                width: 15rem;
+            }
+            #playerList {
+                width: 10rem;
+                margin: 0 auto;
+                color: white;
+            }
+            #usernameShowBox {
+                color: rgb(187, 181, 181);
+            }

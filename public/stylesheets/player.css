@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(48, 40, 40);
+    text-align: center;
+    margin-top: 10%;
+}   
+.jumbotron {
+    background-color: rgb(138, 138, 138);
+}
+
+.input-group {
+    margin: 0 auto;
+}
+#usernameBox {
+    width: 15rem;
+}

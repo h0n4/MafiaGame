@@ -11,37 +11,29 @@
 <body>
 
     <div class="jumbotron">
-        <h1 class="display-4">Mafia (MMBH)</h1>
+        <h1 class="display-3">Mafia (MMBH)</h1>
         <hr class="my-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-5">
-                <form action="/host" method="POST">
-                    <button type="button" class="btn btn-primary btn-lg" id="hostBtn">HOST</button>
-                </form>
-            </div>
-            <div class="col-2">
-                
-            </div>
-            <div class="col-5">
-                <form action="/player" method="POST">
-                    <button type="button" class="btn btn-primary btn-lg">PLAYER</button>
-                </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <form action="/host" method="GET">
+                        <input type="submit" class="btn btn-primary btn-lg <%= disableHost %>" id="hostBtn" value="HOST" <%= disableHost %>> 
+                    </form>
+                </div>
+                <div class="col-2">
+                    
+                </div>
+                <div class="col-5">
+                    <form action="/player" method="GET">
+                        <input type="submit" class="btn btn-primary btn-lg <%= disablePlayer %>" id="playerBtn" value="PLAYER" <%= disablePlayer %>>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
     
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    
+<    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -51,4 +43,4 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
-</html>
+</html>>

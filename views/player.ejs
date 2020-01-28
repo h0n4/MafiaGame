@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mafia MLLG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/player.css">
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-3">Mafia (MMBH)</h1>
+        <hr class="my-4">
+        <form action="/player" method="POST">
+            <div class="input-group mb-3" id="usernameBox">
+                <div class="input-group-append">
+                    <span class="input-group-text">Username</span>
+                </div>
+                <input type="text" class="form-control <%= disable %>" aria-label="Username" name="username" placeholder="<%= placeholderName %>"
+                    aria-describedby="basic-addon2" pattern=".{3,15}" title="Username must be between 3 to 15 characters"
+                    required <%= disable %>>
+            </div>
+            <input class="btn btn-primary <%= disable %>" type="submit" id="jBtn" value="Join" <%= disable %>>
+        </form>        
+    </div>
+
+</body>
+
+</html>

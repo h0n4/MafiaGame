@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(48, 40, 40);
+    text-align: center;
+    margin-top: 10%;
+}   
+.jumbotron {
+    background-color: rgb(138, 138, 138);
+}
+
+.floatL {
+    float: left;
+}
+.players {
+    margin-right: .8rem;
+}
+.leftArrow {
+    color: rgb(68, 63, 63);
+}
